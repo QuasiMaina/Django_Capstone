@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-xl mx-auto bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center">
+    <h1 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Welcome to the Anxiety Diagnosis Game</h1>
+    <p class="mb-6 text-gray-700 dark:text-gray-300">
+        This interactive experience will guide you through a series of subtle decisions. At the end, you'll receive a reflection based on your choices.
+    </p>
+    <form method="post" action="{% url 'start_game' %}">
+        {% csrf_token %}
+        <button type="submit" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md shadow-md transition">
+            Start Game
+        </button>
+    </form>
+</div>
+{% endblock %}

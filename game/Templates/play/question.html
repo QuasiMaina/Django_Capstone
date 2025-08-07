@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mt-12">
+    <h2 class="text-2xl font-bold mb-6 text-center dark:text-white">
+        {{ question.text }}
+    </h2>
+
+    <form method="post" action="{% url 'submit_choice' session_id=session_id %}" class="space-y-4">
+        {% csrf_token %}
+        {% for choice in choices %}
+            <div>
+                <label class="block">
+                    <input type="radio" name="choice_id" value="{{ choice.id }}" required class="mr-2">
+                    <span class="dark:text-gray-200">{{ choice.text }}</span>
+                </label>
+            </div>
+        {% endfor %}
+        <div class="mt-6 text-center">
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded shadow transition duration-300">
+                Submit Answer
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

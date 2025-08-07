@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 mt-12 animate-fade-in">
+    <h1 class="text-3xl font-bold text-center text-blue-700 dark:text-blue-300 mb-6">About This Game</h1>
+
+    <p class="text-gray-700 dark:text-gray-300 text-md mb-4">
+        This game is a subtle and interactive way to explore different patterns of anxiety through storytelling and user choices.
+        Inspired by the DSM-5, it gently analyzes how players respond to various everyday scenarios, giving insight into possible anxiety tendencies.
+    </p>
+
+    <p class="text-gray-700 dark:text-gray-300 text-md mb-4">
+        While it's not a medical diagnosis tool, it can be a helpful reflection exercise to better understand your own mental state.
+        If you find that the results resonate deeply or raise concern, consider reaching out to a mental health professional.
+    </p>
+
+    <p class="text-gray-700 dark:text-gray-300 text-md mb-4">
+        The experience is intentionally designed to be fun, immersive, and slightly unpredictable — encouraging replayability and deeper self-awareness.
+    </p>
+
+    <p class="text-sm text-gray-500 dark:text-gray-400 mt-6 italic">
+        Developed as a creative exploration of psychology and game design. All results are fictional and for entertainment or reflection only.
+    </p>
+
+    <div class="mt-8 text-center">
+        <a href="{% url 'start_game' %}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded shadow transition duration-300">
+            🎮 Start the Game
+        </a>
+    </div>
+</div>
+
+<style>
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+</style>
+{% endblock %}

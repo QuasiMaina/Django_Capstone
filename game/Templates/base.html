@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Anxious Quest{% endblock %}</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Dark mode support via Tailwind class -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white min-h-screen flex flex-col">
+    <!-- NAVBAR -->
+    <nav class="flex justify-between items-center px-6 py-4 bg-gray-100 dark:bg-gray-800">
+        <h1 class="text-xl font-bold">Anxious Quest</h1>
+
+        <div class="flex items-center gap-4">
+            <!-- Dark Mode Toggle Button -->
+            <button id="dark-mode-toggle" class="text-xl p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                <i id="dark-mode-icon" class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 p-6">
+        {% block content %}
+        <!-- page content will go here -->
+        {% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-100 dark:bg-gray-800 p-4 text-center text-sm">
+        © 2025 Anxious Quest
+    </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+        const toggleButton = document.getElementById("dark-mode-toggle");
+        const icon = document.getElementById("dark-mode-icon");
+        const root = document.documentElement;
+
+        // Set theme on initial load
+        document.addEventListener("DOMContentLoaded", () => {
+            if (localStorage.getItem("theme") === "dark") {
+                root.classList.add("dark");
+                icon.classList.remove("fa-moon");
+                icon.classList.add("fa-sun");
+            }
+        });
+
+        toggleButton.addEventListener("click", () => {
+            root.classList.toggle("dark");
+            const isDark = root.classList.contains("dark");
+
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            icon.classList.toggle("fa-moon", !isDark);
+            icon.classList.toggle("fa-sun", isDark);
+        });
+    </script>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

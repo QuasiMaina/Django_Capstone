@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mt-12 animate-fade-in">
+    <h2 class="text-3xl font-bold text-center mb-6 text-indigo-700 dark:text-indigo-300">
+        🧭 How to Play
+    </h2>
+
+    <ol class="list-decimal list-inside space-y-4 text-gray-800 dark:text-gray-200 text-lg">
+        <li>
+            Click <strong>"Start Game"</strong> on the homepage to begin your journey.
+        </li>
+        <li>
+            Read each scenario carefully. These questions are designed to simulate everyday situations.
+        </li>
+        <li>
+            Choose the response that feels most natural to you — there are no right or wrong answers.
+        </li>
+        <li>
+            After answering all questions, you'll receive a diagnosis result that subtly reflects your anxiety patterns.
+        </li>
+        <li>
+            Download or share your result and feel free to play again for a new outcome.
+        </li>
+    </ol>
+
+    <div class="mt-8 text-center">
+        <a href="{% url 'start_game' %}" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded shadow transition duration-300">
+            🚀 Start Game
+        </a>
+    </div>
+</div>
+
+<style>
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.7s ease-out forwards;
+}
+</style>
+{% endblock %}
