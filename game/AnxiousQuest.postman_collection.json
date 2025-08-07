@@ -1,0 +1,80 @@
+{
+  "info": {
+    "name": "Anxious Quest API",
+    "_postman_id": "b4b3f5fa-1e2c-4c88-bbe5-63a01f91c123",
+    "description": "Interactive DSM-5 style anxiety game API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Start Game",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/start/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api", "start", ""]
+        }
+      }
+    },
+    {
+      "name": "Get Node",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/node/{{session_id}}/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api", "node", "{{session_id}}", ""]
+        }
+      }
+    },
+    {
+      "name": "Submit Choice",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"choice_index\": 0\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/choice/{{session_id}}/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api", "choice", "{{session_id}}", ""]
+        }
+      }
+    },
+    {
+      "name": "Get Result",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/result/{{session_id}}/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api", "result", "{{session_id}}", ""]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "session_id",
+      "value": ""
+    }
+  ]
+}

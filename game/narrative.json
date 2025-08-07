@@ -1,0 +1,55 @@
+{
+  "start": {
+    "text": "You’re invited to a casual gathering. What’s the first thing that comes to mind?",
+    "choices": [
+      { "text": "I’ll probably embarrass myself.", "score": {"social": 2}, "next": "party_arrival" },
+      { "text": "I’m excited to see people.", "score": {}, "next": "party_arrival" }
+    ]
+  },
+  "party_arrival": {
+    "text": "You arrive and notice a large group talking loudly. What do you do?",
+    "choices": [
+      { "text": "Avoid them and look for a quieter spot.", "score": {"social": 2}, "next": "conversation" },
+      { "text": "Join in and start chatting.", "score": {}, "next": "conversation" }
+    ]
+  },
+  "conversation": {
+    "text": "Someone asks you about a recent work mistake. How do you respond?",
+    "choices": [
+      { "text": "Freeze up and try to change the subject.", "score": {"gad": 2}, "next": "project_deadline" },
+      { "text": "Laugh it off and explain.", "score": {}, "next": "project_deadline" }
+    ]
+  },
+  "project_deadline": {
+    "text": "You have a big project due tomorrow, but everything feels chaotic. What’s your approach?",
+    "choices": [
+      { "text": "Check and re-check everything repeatedly.", "score": {"ocd": 2}, "next": "late_night" },
+      { "text": "Do my best and let it go.", "score": {}, "next": "late_night" }
+    ]
+  },
+  "late_night": {
+    "text": "It’s midnight and you hear a sudden loud noise outside your window.",
+    "choices": [
+      { "text": "My heart races and I can’t calm down.", "score": {"panic": 2}, "next": "old_memory" },
+      { "text": "I check it out and return to bed.", "score": {}, "next": "old_memory" }
+    ]
+  },
+  "old_memory": {
+    "text": "You see something that reminds you of a difficult time in your past.",
+    "choices": [
+      { "text": "I feel like I’m reliving it.", "score": {"ptsd": 2}, "next": "unexpected_call" },
+      { "text": "I acknowledge it and move on.", "score": {}, "next": "unexpected_call" }
+    ]
+  },
+  "unexpected_call": {
+    "text": "You get an unexpected call from an unknown number.",
+    "choices": [
+      { "text": "My stomach tightens; I don’t pick up.", "score": {"gad": 2}, "next": "end" },
+      { "text": "I answer it without thinking much.", "score": {}, "next": "end" }
+    ]
+  },
+  "end": {
+    "text": "Your day comes to a close. You reflect on how you handled everything.",
+    "choices": []
+  }
+}
