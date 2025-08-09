@@ -18,11 +18,12 @@ class QuestionAdmin(admin.ModelAdmin):
 class ChoiceAdmin(admin.ModelAdmin):
     list_display = ('id', 'text', 'question', 'next_question')
 
-
 @admin.register(GameSession)
 class GameSessionAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user', 'session_id', 'current_node', 'completed', 'created_at')
-    list_filter = ('completed',)
+    list_display = ('id', 'session_key', 'score', 'current_node_id', 'is_complete')
+    list_filter = ('is_complete',)
+
+
 
 
 @admin.register(ChoiceLog)

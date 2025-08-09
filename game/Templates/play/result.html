@@ -1,71 +1,42 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block content %}
-<div class="max-w-xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mt-12 text-center animate-fade-in">
-    <h2 class="text-3xl font-bold mb-4 text-green-700 dark:text-green-300 transform scale-95 hover:scale-100 transition duration-500 ease-out">
-        Your Results
-    </h2>
+<div class="max-w-xl mx-auto mt-20 text-center">
+    <h2 class="text-3xl font-bold mb-6">Your Result</h2>
 
-    <p class="text-lg font-medium dark:text-gray-100">
-        {{ result }}
+    {% if diagnosis %}
+        <p class="text-xl mb-4">
+            Based on your choices, you showed signs of: 
+            <strong>{{ diagnosis.0|title }}</strong>
+        </p>
+        <p class="text-gray-600 mb-8">
+            Total score: {{ diagnosis.1 }}<br>
+            This might mean you sometimes experience challenges that affect your day-to-day — whether it’s 
+            during Nairobi traffic, matatu rides, or social events. You’re not alone, and help is always available.
+        </p>
+    {% else %}
+        <p class="text-xl mb-8">
+            No major signs of anxiety detected 🎉<br>
+            Keep taking care of yourself — maybe with a cup of chai, a walk in Uhuru Park, or time with friends.
+        </p>
+    {% endif %}
+
+    <h3 class="text-lg font-semibold mb-2">Score Breakdown:</h3>
+    <ul class="text-left list-disc list-inside">
+        {% for disorder, score in score_summary.items %}
+            <li>{{ disorder|title }}: {{ score }}</li>
+        {% endfor %}
+    </ul>
+
+    <p class="mt-6 text-sm text-gray-500 dark:text-gray-400">
+        *This is not a medical diagnosis. If you often feel overwhelmed, consider talking to a mental health 
+        professional or a trusted friend. Organisations like <strong>Befrienders Kenya</strong> 
+        (Tel: 0722 178 177) are here to listen.
     </p>
 
-    {% if diagnosis_type %}
-    <div class="mt-2 text-md text-gray-700 dark:text-gray-300 italic">
-        Diagnosis: <strong>{{ diagnosis_type }}</strong>
-    </div>
-    {% endif %}
-
-    {% if score %}
-    <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Scoring Breakdown: <strong>{{ score }}%</strong>
-    </div>
-    {% endif %}
-
-    {% if summary %}
-    <div class="mt-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ summary }}
-    </div>
-    {% endif %}
-
-    <div class="mt-6">
-        <button onclick="downloadResult()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded shadow">
-            📩 Download Result
-        </button>
-    </div>
-
-    <div class="mt-8 space-x-4">
-        <a href="{% url 'clear_session' session_id=session_id %}" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow transition duration-300">
-            Play Again
-        </a>
-        <a href="{% url 'start_game' %}" class="inline-block bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded shadow transition duration-300">
-            Back to Home
-        </a>
-    </div>
+    <a href="{% url 'home' %}" 
+       class="mt-8 inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
+        Play Again
+    </a>
 </div>
-
-<script>
-function downloadResult() {
-    const text = `Anxiety Diagnosis Result\n\nResult: {{ result }}\nDiagnosis: {{ diagnosis_type|default:'' }}\nScore: {{ score|default:'' }}%\nSummary: {{ summary|default:'' }}`;
-    const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = "anxiety_diagnosis_result.txt";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-}
-</script>
-
-<style>
-@keyframes fade-in {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
-}
-</style>
 {% endblock %}

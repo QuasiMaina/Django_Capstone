@@ -1,0 +1,235 @@
+[
+  {
+    "model": "game.question",
+    "pk": 1,
+    "fields": {
+      "text": "Unajipata ume-stress kila saa, ata bila reason? Akili haikai tu mahali?",
+      "order": 1
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 1,
+    "fields": {
+      "question": 1,
+      "text": "Saa zote niko na presha, hata nikilala",
+      "score": 3,
+      "disorder_type": "generalized anxiety"
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 2,
+    "fields": {
+      "question": 1,
+      "text": "Mara chache, mostly exam period",
+      "score": 2,
+      "disorder_type": "generalized anxiety"
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 3,
+    "fields": {
+      "question": 1,
+      "text": "Hapana bana, niko cool",
+      "score": 0,
+      "disorder_type": "none"
+    }
+  },
+
+  {
+    "model": "game.question",
+    "pk": 2,
+    "fields": {
+      "text": "Una-struggle kulala coz akili inawaza vitu mingi?",
+      "order": 2
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 4,
+    "fields": {
+      "question": 2,
+      "text": "Ndiyo, kila usiku mind iko busy",
+      "score": 3,
+      "disorder_type": "generalized anxiety"
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 5,
+    "fields": {
+      "question": 2,
+      "text": "Mara moja moja, nikijua kesho kuna stress",
+      "score": 2,
+      "disorder_type": "generalized anxiety"
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 6,
+    "fields": {
+      "question": 2,
+      "text": "Hapana, nalala poa",
+      "score": 0,
+      "disorder_type": "none"
+    }
+  },
+
+  {
+    "model": "game.question",
+    "pk": 3,
+    "fields": {
+      "text": "Ukiwa kwa public, unafeel watu wanakujudge ama kukuangalia vibaya?",
+      "order": 3
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 7,
+    "fields": {
+      "question": 3,
+      "text": "Saa zote, niko rada juu ya watu",
+      "score": 3,
+      "disorder_type": "social anxiety"
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 8,
+    "fields": {
+      "question": 3,
+      "text": "Mara chache, kama ni mbele ya strangers",
+      "score": 2,
+      "disorder_type": "social anxiety"
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 9,
+    "fields": {
+      "question": 3,
+      "text": "Aii wacha, niko easy",
+      "score": 0,
+      "disorder_type": "none"
+    }
+  },
+
+  {
+    "model": "game.question",
+    "pk": 4,
+    "fields": {
+      "text": "Unahavoid events juu ya social situations zinakustress?",
+      "order": 4
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 10,
+    "fields": {
+      "question": 4,
+      "text": "Ndiyo bana, na skip hizo mambo",
+      "score": 3,
+      "disorder_type": "social anxiety"
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 11,
+    "fields": {
+      "question": 4,
+      "text": "Mara moja moja, nikijua kuna watu wengi",
+      "score": 2,
+      "disorder_type": "social anxiety"
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 12,
+    "fields": {
+      "question": 4,
+      "text": "Hapana, mimi ni social butterfly",
+      "score": 0,
+      "disorder_type": "none"
+    }
+  },
+
+  {
+    "model": "game.question",
+    "pk": 5,
+    "fields": {
+      "text": "Kuna time moyo unapiga haraka sana bila warning, unafeel kama uta faint?",
+      "order": 5
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 13,
+    "fields": {
+      "question": 5,
+      "text": "Ndiyo, mara nyingi sana",
+      "score": 3,
+      "disorder_type": "panic disorder"
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 14,
+    "fields": {
+      "question": 5,
+      "text": "Mara chache, si kila saa",
+      "score": 2,
+      "disorder_type": "panic disorder"
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 15,
+    "fields": {
+      "question": 5,
+      "text": "Hapana, sijahisi hivo",
+      "score": 0,
+      "disorder_type": "none"
+    }
+  },
+
+  {
+    "model": "game.question",
+    "pk": 6,
+    "fields": {
+      "text": "Unashikwa na kushindwa kupumua vizuri ghafla?",
+      "order": 6
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 16,
+    "fields": {
+      "question": 6,
+      "text": "Ndiyo, imewai nitokea",
+      "score": 3,
+      "disorder_type": "panic disorder"
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 17,
+    "fields": {
+      "question": 6,
+      "text": "Mara moja moja",
+      "score": 2,
+      "disorder_type": "panic disorder"
+    }
+  },
+  {
+    "model": "game.choice",
+    "pk": 18,
+    "fields": {
+      "question": 6,
+      "text": "Hapana bana",
+      "score": 0,
+      "disorder_type": "none"
+    }
+  }
+]
